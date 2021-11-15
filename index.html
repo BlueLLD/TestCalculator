@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="math.ts"></script>
+    <script src="math.js"></script>
     <title>Document</title>
 </head>
 <body onload="" id="body">
     <label for="points">Points:</label>
-    <input type="text" name="points" id="p"><br>
-    <input type="submit" value="submit" onclick="logger()"><br>
+    <input type="text" name="points" id="p" onchange="setPoints(this)"><br>
+    <label for="points">Total Points:</label>
+
+    <input type="text" name="totalPoints" id="p" onchange="setTotalPoints(this)"><br>
+    <input type="submit" value="submit" onclick="printValues()"><br>
+    <p id="answer">Answer: </p>
 </body>
 </html>
