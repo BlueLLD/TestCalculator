@@ -101,7 +101,7 @@ function setTasks(title,content) {
     })
 }
 var MasterTasks = [];
-
+var AllStudents = []
 class task{
     maxPoints = null;
     createNewTaskElement() {
@@ -123,6 +123,7 @@ class task{
 }
 class student{
     points;
+    isCorrected = false;
     constructor(name){
         this.name = name;
         this.tasks = this.createTasks();
@@ -131,12 +132,20 @@ class student{
         this.studentButton.className = "studentButton";
         this.studentButton.onclick = val=>{this.buttonFunction()};
         document.getElementById("students").appendChild(this.studentButton);
+        AllStudents.push(this)
     }
     buttonFunction(){
         setTasks(this.name,this.tasks)
+        AllStudents.forEach(student=>{
+            student.setCorrected()
+        })
+    }
+    setCorrected(){
         if(this.isAllTasksDone()){
+            this.isCorrected = true
             this.studentButton.style.backgroundColor = "green"
         }else{
+            this.isCorrected = false;
             this.studentButton.style.backgroundColor = "red"
         }
     }
@@ -164,7 +173,7 @@ class student{
             taskElement.type = "number"
             taskElement.max = instance.maxPoints;
             taskElement.className = "taskBox"
-            taskElement.onchange = _=>{this.points = taskElement.value;};
+            taskElement.onchange = _=>{this.points = taskElement.value;this.setCorrected()};
             box.appendChild(namePlate);
             box.appendChild(maxPlate);
             box.appendChild(taskElement);
@@ -172,6 +181,21 @@ class student{
         })
         return returnItems;
 
+    }
+}
+function AllStudentsDone() {
+    var theReturn = true;
+        AllStudents.forEach(student=>{
+            if(!student.isCorrected){
+                theReturn = false}
+        })
+        return theReturn;
+}
+function checkIfDone(button) {
+    if(AllStudentsDone()){
+        button.style.backgroundColor = "green"
+    }else{
+        button.style.backgroundColor = "red"
     }
 }
 function newTask() {
