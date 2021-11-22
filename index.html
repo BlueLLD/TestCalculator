@@ -16,20 +16,24 @@
     <input type="number" name="totalPoints" id="p" onchange="setTotalPoints(this)"><br>
     <input type="submit" value="submit" onclick="printValues()"><br>
     <p id="answer">Answer: </p> -->
-    
-    <div class="grid">  
-        <div id="taskList">Tasks</div>
-        <div id="students"></div>
-    </div>
+    <div id="gradeCorrecterPage">
+        <div class="grid">  
+            <div id="taskList">Tasks</div>
+            <div id="students"></div>
+        </div>
 
-    <div id="taskSetter">
-        <button onclick="newTask()" id="newTaskButton">Add task</button>
-        <button onclick="finalizeTasks()">Set Tasks</button>
+        <div id="taskSetter">
+            <button onclick="newTask()" id="newTaskButton">Add task</button>
+            <button onclick="finalizeTasks()">Set Tasks</button>
+        </div>
+        <div id="studentSetter" hidden="true">
+            <button onclick="newStudent()" id="newStudent">Add Student</button>
+            <input type="text" id="student_name">
+            <button onclick="checkIfDone(this)">is done</button>
+        </div>
     </div>
-    <div id="studentSetter" hidden="true">
-        <button onclick="newStudent()" id="newStudent">Add Student</button>
-        <input type="text" id="student_name">
-    </div>
+    <div id="gradesPage">
 
+    </div>
 </body>
 </html>

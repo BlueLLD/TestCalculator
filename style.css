@@ -15,6 +15,9 @@
     width: 100px;
     margin: 10px;
 }
+#gradesPage{
+    background-color: cadetblue;
+}
 .grid{
     height:500px;
     display: grid;
