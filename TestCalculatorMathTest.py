@@ -5,7 +5,6 @@ totalPoints = 69
 
 pointsPercent = (points/totalPoints)*100
 print(f"{pointsPercent}%")
-
 def getScore():
     if pointsPercent >= 98:
         return "6"
@@ -22,7 +21,7 @@ def getScore():
     if pointsPercent >= 81:
         return "5-"
     if pointsPercent >= 79:
-        return "5/3"
+        return "5/4"
     if pointsPercent >= 77:
         return "4/5"
     if pointsPercent >= 73:
