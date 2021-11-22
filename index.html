@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="math.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+    <!-- <label for="points">Points:</label>
+    <input type="number" name="points" id="p" onchange="setPoints(this)"><br>
+    <label for="points">Total Points:</label>
+    <input type="number" name="totalPoints" id="p" onchange="setTotalPoints(this)"><br>
+    <input type="submit" value="submit" onclick="printValues()"><br>
+    <p id="answer">Answer: </p> -->
+    
+    <div class="grid">  
+        <div id="taskList">Tasks</div>
+        <div id="students"></div>
+    </div>
+
+    <div id="taskSetter">
+        <button onclick="newTask()" id="newTaskButton">Add task</button>
+        <button onclick="finalizeTasks()">Set Tasks</button>
+    </div>
+    <div id="studentSetter" hidden="true">
+        <button onclick="newStudent()" id="newStudent">Add Student</button>
+        <input type="text" id="student_name">
+    </div>
+
+</body>
+</html>
